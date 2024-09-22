@@ -8,7 +8,3 @@ spring:
         git:
           uri: https://github.com/JoseR200/Microservices.git
           search-paths: config-data
-  security:
-    user:
-      name: root
-      password: s3cr3t
