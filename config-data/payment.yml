@@ -12,3 +12,8 @@ spring:
       ddl-auto: update
     show-sql: true
     open-in-view: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8099/eureka/
