@@ -35,3 +35,38 @@ spring:
             - Path=/microservice1/receipts/**
           filters:
             - RewritePath=/microservice1/receipts/(?<segment>.*), /receipts/$\{segment}
+        - id: 
+            product-swagger
+          uri: 
+            http://localhost:8091
+          predicates:
+            - Path=/categories/v3/api-docs
+            - Method=GET
+        - id:
+            payment-swagger
+          uri:
+            http://localhost:8092
+          predicates:
+            - Path=/payments/v3/api-docs
+            - Method=GET
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    config-url: /v3/api-docs/swagger-config
+    urls:
+      - url: 
+          /v3/api-docs
+        name: 
+          API Gateway Service
+      - url: 
+          /categories/v3/api-docs
+        name:
+          Categories Service
+      - url:
+          /payments/v3/api-docs
+        name:
+          Payments Service
