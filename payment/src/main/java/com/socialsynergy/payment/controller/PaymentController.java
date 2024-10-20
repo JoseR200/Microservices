@@ -19,7 +19,7 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
 
-    @GetMapping
+    @GetMapping(value = "/list")
     public ResponseEntity<List<Payment>> getAll() {
         List<Payment> categories = paymentService.getAll();
 

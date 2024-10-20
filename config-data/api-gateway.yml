@@ -24,4 +24,4 @@ spring:
           uri:
             lb://payment
           predicates:
-            - Path=/payments/**
+            - Path=/payments-service/**
