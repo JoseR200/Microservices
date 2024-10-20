@@ -27,3 +27,11 @@ spring:
             - Path=/microservice1/payments/**
           filters:
             - RewritePath=/microservice1/payments/(?<segment>.*), /payments/$\{segment}
+        - id:
+            receipt
+          uri:
+            lb://payment
+          predicates:
+            - Path=/microservice1/receipts/**
+          filters:
+            - RewritePath=/microservice1/receipts/(?<segment>.*), /receipts/$\{segment}
