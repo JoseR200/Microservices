@@ -25,3 +25,5 @@ spring:
             lb://payment
           predicates:
             - Path=/microservice1/payments/**
+          filters:
+            - RewritePath=/microservice1/payments/(?<segment>.*), /payments/$\{segment}
